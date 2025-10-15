@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="hexapod">
+
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <cylinder length="0.06" radius="0.2"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="0.9 0.45 0.0 1.0"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="leg1_coxa_link"><visual><origin rpy="0 1.5707 0" xyz="0.04 0 0"/><geometry><box size="0.08 0.03 0.03"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="base_to_leg1_coxa" type="revolute"><parent link="base_link"/><child link="leg1_coxa_link"/><origin rpy="0 0 -0.7853" xyz="0.15 -0.15 0"/><axis xyz="0 0 1"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg1_femur_link"><visual><origin rpy="0 1.5707 0" xyz="0.075 0 0"/><geometry><cylinder length="0.15" radius="0.015"/></geometry><material name="orange"><color rgba="0.9 0.45 0.0 1.0"/></material></visual></link>
+  <joint name="leg1_coxa_to_femur" type="revolute"><parent link="leg1_coxa_link"/><child link="leg1_femur_link"/><origin xyz="0.08 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg1_tibia_link"><visual><origin rpy="0 1.5707 0" xyz="0.1 0 0"/><geometry><cylinder length="0.2" radius="0.012"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="leg1_femur_to_tibia" type="revolute"><parent link="leg1_femur_link"/><child link="leg1_tibia_link"/><origin xyz="0.15 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+
+  <link name="leg2_coxa_link"><visual><origin rpy="0 1.5707 0" xyz="0.04 0 0"/><geometry><box size="0.08 0.03 0.03"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="base_to_leg2_coxa" type="revolute"><parent link="base_link"/><child link="leg2_coxa_link"/><origin rpy="0 0 -1.5707" xyz="0 -0.2 0"/><axis xyz="0 0 1"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg2_femur_link"><visual><origin rpy="0 1.5707 0" xyz="0.075 0 0"/><geometry><cylinder length="0.15" radius="0.015"/></geometry><material name="orange"><color rgba="0.9 0.45 0.0 1.0"/></material></visual></link>
+  <joint name="leg2_coxa_to_femur" type="revolute"><parent link="leg2_coxa_link"/><child link="leg2_femur_link"/><origin xyz="0.08 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg2_tibia_link"><visual><origin rpy="0 1.5707 0" xyz="0.1 0 0"/><geometry><cylinder length="0.2" radius="0.012"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="leg2_femur_to_tibia" type="revolute"><parent link="leg2_femur_link"/><child link="leg2_tibia_link"/><origin xyz="0.15 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+
+  <link name="leg3_coxa_link"><visual><origin rpy="0 1.5707 0" xyz="0.04 0 0"/><geometry><box size="0.08 0.03 0.03"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="base_to_leg3_coxa" type="revolute"><parent link="base_link"/><child link="leg3_coxa_link"/><origin rpy="0 0 -2.3561" xyz="-0.15 -0.15 0"/><axis xyz="0 0 1"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg3_femur_link"><visual><origin rpy="0 1.5707 0" xyz="0.075 0 0"/><geometry><cylinder length="0.15" radius="0.015"/></geometry><material name="orange"><color rgba="0.9 0.45 0.0 1.0"/></material></visual></link>
+  <joint name="leg3_coxa_to_femur" type="revolute"><parent link="leg3_coxa_link"/><child link="leg3_femur_link"/><origin xyz="0.08 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg3_tibia_link"><visual><origin rpy="0 1.5707 0" xyz="0.1 0 0"/><geometry><cylinder length="0.2" radius="0.012"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="leg3_femur_to_tibia" type="revolute"><parent link="leg3_femur_link"/><child link="leg3_tibia_link"/><origin xyz="0.15 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+
+  <link name="leg4_coxa_link"><visual><origin rpy="0 1.5707 0" xyz="0.04 0 0"/><geometry><box size="0.08 0.03 0.03"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="base_to_leg4_coxa" type="revolute"><parent link="base_link"/><child link="leg4_coxa_link"/><origin rpy="0 0 0.7853" xyz="0.15 0.15 0"/><axis xyz="0 0 1"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg4_femur_link"><visual><origin rpy="0 1.5707 0" xyz="0.075 0 0"/><geometry><cylinder length="0.15" radius="0.015"/></geometry><material name="orange"><color rgba="0.9 0.45 0.0 1.0"/></material></visual></link>
+  <joint name="leg4_coxa_to_femur" type="revolute"><parent link="leg4_coxa_link"/><child link="leg4_femur_link"/><origin xyz="0.08 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg4_tibia_link"><visual><origin rpy="0 1.5707 0" xyz="0.1 0 0"/><geometry><cylinder length="0.2" radius="0.012"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="leg4_femur_to_tibia" type="revolute"><parent link="leg4_femur_link"/><child link="leg4_tibia_link"/><origin xyz="0.15 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+
+  <link name="leg5_coxa_link"><visual><origin rpy="0 1.5707 0" xyz="0.04 0 0"/><geometry><box size="0.08 0.03 0.03"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="base_to_leg5_coxa" type="revolute"><parent link="base_link"/><child link="leg5_coxa_link"/><origin rpy="0 0 1.5707" xyz="0 0.2 0"/><axis xyz="0 0 1"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg5_femur_link"><visual><origin rpy="0 1.5707 0" xyz="0.075 0 0"/><geometry><cylinder length="0.15" radius="0.015"/></geometry><material name="orange"><color rgba="0.9 0.45 0.0 1.0"/></material></visual></link>
+  <joint name="leg5_coxa_to_femur" type="revolute"><parent link="leg5_coxa_link"/><child link="leg5_femur_link"/><origin xyz="0.08 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg5_tibia_link"><visual><origin rpy="0 1.5707 0" xyz="0.1 0 0"/><geometry><cylinder length="0.2" radius="0.012"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="leg5_femur_to_tbia" type="revolute"><parent link="leg5_femur_link"/><child link="leg5_tibia_link"/><origin xyz="0.15 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+
+  <link name="leg6_coxa_link"><visual><origin rpy="0 1.5707 0" xyz="0.04 0 0"/><geometry><box size="0.08 0.03 0.03"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="base_to_leg6_coxa" type="revolute"><parent link="base_link"/><child link="leg6_coxa_link"/><origin rpy="0 0 2.3561" xyz="-0.15 0.15 0"/><axis xyz="0 0 1"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg6_femur_link"><visual><origin rpy="0 1.5707 0" xyz="0.075 0 0"/><geometry><cylinder length="0.15" radius="0.015"/></geometry><material name="orange"><color rgba="0.9 0.45 0.0 1.0"/></material></visual></link>
+  <joint name="leg6_coxa_to_femur" type="revolute"><parent link="leg6_coxa_link"/><child link="leg6_femur_link"/><origin xyz="0.08 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+  <link name="leg6_tibia_link"><visual><origin rpy="0 1.5707 0" xyz="0.1 0 0"/><geometry><cylinder length="0.2" radius="0.012"/></geometry><material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material></visual></link>
+  <joint name="leg6_femur_to_tibia" type="revolute"><parent link="leg6_femur_link"/><child link="leg6_tibia_link"/><origin xyz="0.15 0 0"/><axis xyz="0 1 0"/><limit effort="10" lower="-1.57" upper="1.57" velocity="1"/></joint>
+
+</robot>
